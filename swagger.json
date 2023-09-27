@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Air Quality Checker",
+    "description": "This is an API Documentation for Air Quality Checker",
+    "contact": {
+      "email": "eslamosama203@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "APIs Repository",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Checking Air Quality of a given GPS Point",
+      "description": "Live Traction & Checker of Air Quality"
+    },
+    {
+      "name": "Fetch the most pollution point",
+      "description": "Operations about user"
+    }
+  ],
+  "paths": {
+    "/check_air_quality": {
+      "post": {
+        "tags": [
+          "Checking Air Quality of a given GPS Point"
+        ],
+        "parameters": [
+          {
+            "name": "lon",
+            "in": "query",
+            "description": "Longitude of the GPS Point",
+            "required": true,
+            "explode": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude of the GPS Point",
+            "required": true,
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "summary": "Checking Air Quality",
+        "responses": {
+          "200": {
+            "description": "Fetched & Stored Data Successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/airqualities"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid lon / lat is required"
+          }
+        }
+      }
+    },
+    "/check_most_polluted_point": {
+      "get": {
+        "tags": [
+          "Fetch the most pollution point"
+        ],
+        "summary": "Checking Air Quality",
+        "responses": {
+          "200": {
+            "description": "Fetched & Stored Data Successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/mostopulatedpoint"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "URL is not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "airqualities": {
+        "type": "object",
+        "properties": {
+          "ts": {
+            "type": "ISO_DATE",
+            "example": "2023-09-27T11:00:00.000Z"
+          },
+          "aqius": {
+            "type": "number",
+            "example": "47"
+          },
+          "mainus": {
+            "type": "string",
+            "example": "p1"
+          },
+          "aqicn": {
+            "type": "number",
+            "example": "52"
+          },
+          "maincn": {
+            "type": "string",
+            "example": "p2"
+          },
+          "latitude": {
+            "type": "number",
+            "example": "48.856613"
+          },
+          "longitude": {
+            "type": "number",
+            "example": "2.352222"
+          }
+        }
+      },
+      "mostopulatedpoint": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "ObjectId",
+            "example": "65141cc2dd5b3945829df5fe"
+          },
+          "ts": {
+            "type": "ISO_DATE",
+            "example": "2023-09-27T11:00:00.000Z"
+          },
+          "createdAt": {
+            "type": "ISO_DATE",
+            "example": "2023-09-27T11:00:00.000Z"
+          },
+          "latitude": {
+            "type": "number",
+            "example": "48.856613"
+          },
+          "airQualityIndex": {
+            "type": "number",
+            "example": "103"
+          },
+          "longitude": {
+            "type": "number",
+            "example": "2.352222"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "##default"
+        }
+      }
+    }
+  }
+}
