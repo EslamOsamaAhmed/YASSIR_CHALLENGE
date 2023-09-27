@@ -6,9 +6,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -17,7 +14,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Technologies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -47,7 +44,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://www.iqair.com/fr/dashboard/api]([https://www.iqair.com/fr/dashboard/api](https://www.iqair.com/fr/dashboard/api))
+1. Get a free API Key at [https://www.iqair.com/fr/dashboard/api][https://www.iqair.com/fr/dashboard/api]
 2. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
@@ -74,11 +71,12 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Used Technologies
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+- NodeJS as a back-end framework.
+- Express which is the server that the Nodejs uses to run the project.
+- MongoDB which is the DB Technology used to store the data.
+- Swagger which is the documentation tool used to document the APIs and the execution of them.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
